@@ -13,10 +13,8 @@ class App extends Component {
         body: ''
       }
     };
-    this.handleRemove = this.handleRemove.bind(this);
-    this.inputChange = this.inputChange.bind(this);
-
   }
+
 
   reloadData() {
     axios.get('http://localhost:3004/posts').then(
@@ -27,7 +25,8 @@ class App extends Component {
         })
       }
     );
-  }
+  };
+
   clearData = () => {
     let newdataPost = { ...this.state.dataPost };
     newdataPost['id'] = "";
@@ -36,7 +35,8 @@ class App extends Component {
     this.setState({
       dataPost: newdataPost
     })
-  }
+  };
+
   onSubmitForm = () => {
     if (this.state.edit === false) {
       axios.post('http://localhost:3004/posts', this.state.dataPost).then(() => {
@@ -51,8 +51,8 @@ class App extends Component {
     }
   };
 
-  inputChange(e) {
-    let newdataPost = { ... this.state.dataPost };
+  inputChange =(e) =>{
+    let newdataPost = { ...this.state.dataPost };
     if (this.state.edit === false) {
       newdataPost['id'] = new Date().getTime();
     }
@@ -73,8 +73,7 @@ class App extends Component {
     });
   }
 
-  handleRemove(e) {
-    console.log(e.target.value);
+  handleRemove = (e) => {
     fetch(`http://localhost:3004/posts/${e.target.value}`, { method: "DELETE" }).then(res =>
       this.reloadData());
   }
@@ -109,7 +108,6 @@ class App extends Component {
         })}
       </div>
     )
-
   }
 }
 
