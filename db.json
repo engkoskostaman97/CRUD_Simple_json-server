@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "id": 4,
+      "title": "json-server4",
+      "body": "typicode4"
+    },
+    {
+      "id": 1670386964363,
+      "title": "COBA",
+      "body": "TEST"
+    },
+    {
+      "id": 1670387268713,
+      "title": "UP2",
+      "body": "UP"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
